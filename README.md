@@ -37,8 +37,7 @@
         <button onclick="upload()">发送</button>
     </div>
     
-    <script src="simple-upload-slice-file.min.js"></script>
-    <!--<script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>-->
+    <script src="dist/simple-upload-slice-file.min.js"></script>
     <script>
         function upload() {
     
