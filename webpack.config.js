@@ -1,13 +1,18 @@
 const path = require('path');
 
+
 module.exports = {
-    mode: 'production',
+    mode: 'development',
     devtool: 'source-map',
     entry: {
         index: './src/index.js',
     },
     output: {
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'simple-upload-slice-file.min.js',
+        library: 'SimpleUploadSliceFile',
+        libraryTarget: 'umd',
+        umdNamedDefine: true
     },
     module: {
         rules: [
