@@ -21,7 +21,7 @@
 
 1. dist目录下提供了前端提交和php演示文件。具体查看demo
 
-#####Browser
+##### Browser
 ```javascript
     <!DOCTYPE html>
     <html lang="en">
