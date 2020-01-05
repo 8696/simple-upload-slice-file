@@ -5,7 +5,7 @@ module.exports = {
   mode: 'development',
   devtool: 'source-map',
   entry: {
-    index: './src/index.js',
+    index: './2.xSrc/index.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

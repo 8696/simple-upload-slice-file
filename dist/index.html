@@ -1,31 +1,20 @@
-# Simple upload slice file
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<div>
+  <input type="file" class="file" name="" id="file">
+  <button onclick="upload()">发送</button>
+</div>
 
+<script src="./simple-upload-slice-file.min.js"></script>
+<!--<script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>-->
+<script>
+  function upload() {
 
-#### 项目介绍
-
-一款前端简单的分片上传文件小项目，不依赖jQuery，解决大文件上传过久，网络不稳定导致前功尽弃的问题。支持如下：
- - 设置切片大小
- - 进度计算
- - 队列提交
- - 队列控制 
- - MD5校验
- - IE10及其他主流浏览器(因使用原生FormData对象)
- 
-
- #### 历史版本
- [1.x](https://github.com/8696/simple-upload-slice-file/tree/1.x)
-
-#### 安装
-
-##### (c)npm install simple-upload-slice-file -D
-
-
-#### 使用
-##### (c)npm install
-##### node server/app.js 
-
-##### Browser
-```javascript
     new SimpleUploadSliceFile({
       //
       url: 'http://127.0.0.1:3000/upload',
@@ -108,17 +97,29 @@
         // console.log(res);
       }
     });
+  }
+  /**
+   * v2.x
+   * 1、完整演示内容如上
+   *
+   * 2、任务参数如下，在提交中前端自动提交任务参数以及文件信息，自动添加在 query 上，用于标识前端目前发送文件的状态，后端根据情况可获取
+   *      task-id -> 该文件的唯一标识
+   *      task-total-size -> 该文件总大小
+   *      task-total-slice -> 该文件总共被切成了几块
+   *      task-order -> 当前所传输的第几块切片
+   *      task-size-range -> 正在提交的当前切片在文件里的大小所在区间
+   *      task-size -> 当前传输块的大小
+   *
+   * 3、2.x版本后端提供 nodejs 作为演示文件，详情 server 文件夹
+   *
+   * 4、2.x版本进行了重写，1.x后端演示文件为 php，链接：
+   *    https://github.com/8696/simple-upload-slice-file/tree/1.x
+   *
+   *
+   *
+   * */
+</script>
 
-```
-##### vue
-```javascript
 
-    import SimpleUploadSliceFile from 'simple-upload-slice-file';
-    
-    new SimpleUploadSliceFile.addFile().send();
-
-```
-
-
-
-
+</body>
+</html>

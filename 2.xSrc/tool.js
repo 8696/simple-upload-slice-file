@@ -40,9 +40,9 @@ class Tool {
   static deepClone(origin, target) {
     for (let prop in origin) {
       if (origin.hasOwnProperty(prop)) {
-        if (typeof origin[prop] === 'object'
-          && Object.prototype.toString.call(origin[prop]) !== '[object Null]') {
-          // object || array
+        //判断是原始值还是引用值 并且不包含null(null其实是原始值，但是typeof返回是'object')
+        if (typeof origin[prop] === 'object' && Object.prototype.toString.call(origin[prop]) !== '[object Null]') {
+          //判断原始值是对象还是数组
           target[prop] = Object.prototype.toString.call(origin[prop]) === '[object Array]' ? [] : {};
           Tool.deepClone(origin[prop], target[prop]);
         } else {

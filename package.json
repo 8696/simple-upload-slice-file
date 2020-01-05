@@ -1,6 +1,6 @@
 {
   "name": "simple-upload-slice-file",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "一款前端简单的分片上传文件小项目，支持进度计算，队列提交，MD5校验",
   "author": "long<204084802@qq.com>",
   "main": "./dist/simple-upload-slice-file.min.js",
@@ -14,14 +14,23 @@
     "url": "git://github.com/8696/simple-upload-slice-file.git"
   },
   "license": "ISC",
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
+    "fs-extra": "^8.1.0",
+    "glob": "^7.1.6",
     "koa": "^2.11.0",
+    "koa-body": "^4.1.1",
     "koa-bodyparser": "^4.2.1",
     "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "make-dir": "^3.0.0",
+    "mime-types": "^2.1.25",
     "webpack": "^4.19.0",
     "webpack-cli": "^3.1.2"
   },

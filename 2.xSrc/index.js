@@ -8,8 +8,6 @@
  * Time: 3:32 下午
  */
 
-
-
 import UploadFile from './upload';
 
 module.exports = UploadFile;
