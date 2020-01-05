@@ -1,6 +1,6 @@
 {
   "name": "simple-upload-slice-file",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "一款前端简单的分片上传文件小项目，支持进度计算，队列提交，MD5校验",
   "author": "long<204084802@qq.com>",
   "main": "./dist/simple-upload-slice-file.min.js",

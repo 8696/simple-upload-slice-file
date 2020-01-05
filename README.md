@@ -21,11 +21,11 @@
 
 
 #### 使用
-##### (c)npm install
-##### node server/app.js 
 
 ##### Browser
 ```javascript
+    <script src="dist/simple-upload-slice-file.min.js"></script>
+
     new SimpleUploadSliceFile({
       //
       url: 'http://127.0.0.1:3000/upload',
