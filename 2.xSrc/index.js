@@ -7,6 +7,7 @@
  * Date: 2020/1/4
  * Time: 3:32 下午
  */
+import './polyfill';
 
 import UploadFile from './upload';
 

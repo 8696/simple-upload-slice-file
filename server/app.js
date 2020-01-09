@@ -28,9 +28,8 @@ app.use(staticFiles(path.resolve(__dirname, '../dist')));
 
 app.use(async (ctx, next) => {
   ctx.set('Access-Control-Allow-Origin', '*');
-  ctx.set('Access-Control-Allow-Headers', '*');
-  ctx.set('Access-Control-Allow-Headers', '*');
-  ctx.set('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
+  ctx.set('Access-Control-Allow-Headers', 'header1, header2'); // IE 不能用*
+  ctx.set('Access-Control-Allow-Methods', '*');
   if (ctx.method === 'OPTIONS') {
     ctx.body = '';
   } else {
@@ -62,7 +61,7 @@ async function getFileMd5(file) {
 
 router.post('/upload', async (ctx) => {
 
-  await sleep();
+  // await sleep();
   // console.log(ctx.request.files.file);
   // console.log(ctx.request.body);
   // console.log(ctx.request.query);
@@ -80,10 +79,11 @@ router.post('/upload', async (ctx) => {
   if (Number(ctx.request.query['task-total-slice']) === Number(ctx.request.query['task-order'])) {
     // 合并(也可以每次提交在进行合并)
     let newFile = path.resolve(taskDir, ctx.request.query['task-id'] + suffix);
-
-    fs.readdirSync(taskDir).forEach(fileName => {
+    fs.readdirSync(taskDir).sort((a, b) => {
+      return a.split('.')[0] - b.split('.')[0];
+    }).forEach(fileName => {
+      console.log(fileName);
       let filePath = path.resolve(taskDir, fileName);
-      console.log(filePath);
       //
       fs.appendFileSync(newFile, fs.readFileSync(filePath));
       fs.unlinkSync(filePath);

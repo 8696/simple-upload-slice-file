@@ -21,7 +21,7 @@
       // 队列延迟发送，可用于调试，默认0(ms)
       delay: 0,
       // 切片大小(M)，建议不要太小,默认10
-      chunkSile: 20,
+      chunkSile: 1,
     })
       .appendHeader({
         header1: 'header 1',
@@ -54,6 +54,7 @@
           // console.log(taskParam);
           // console.log('queue');
           // console.log(queue);
+          // 队列
           // queue 使用方法 https://github.com/8696/js-queue
           // 例1：
           if (xhr.status === 200) {
@@ -63,11 +64,11 @@
               queue.next();
             } else {
               // 重新提交当前块
-              queue.again();
+              // queue.again();
             }
           } else {
             // 重新提交当前块
-            queue.again();
+            // queue.again();
           }
         },
         // 队列中的最后一次响应
