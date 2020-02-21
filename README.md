@@ -17,7 +17,12 @@
 
 #### 安装
 
-##### (c)npm install simple-upload-slice-file -D
+##### (c)npm install simple-upload-slice-file -
+
+#### 演示
+
+##### 1. (c)npm install
+##### 2. node server/app.js 
 
 
 #### 使用
@@ -108,8 +113,17 @@
         // console.log(res);
       }
     });
-
-```
+    /**
+      * 在请求地址 query 中会自动携带文件上传信息，server/app.js 中提供演示文件
+      * task-order: 15    -> 当前切片中的块号，从 1 开始
+        task-size-range: 146800640-157286400   -> 当前切片的在文件中的大小范围 
+        task-total-slice: 24    -> 总切片数 / 块数
+        task-total-size: 249456695    -> 文件总大小
+        task-i: SuX6xxxxx06889    -> 当前文件任务 ID 
+        task-size: 10485760     -> 当前切片的大小
+      *
+      */
+``` 
 ##### vue
 ```javascript
 
