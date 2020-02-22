@@ -17,7 +17,7 @@
 
 #### 安装
 
-##### (c)npm install simple-upload-slice-file -
+##### (c)npm install simple-upload-slice-file -D
 
 #### 演示
 
